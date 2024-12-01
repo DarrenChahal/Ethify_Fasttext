@@ -1,0 +1,9 @@
+
+this is an example sentence for fasttext
+fasttext is useful for text classification
+machine learning is fun
+this is another example sentence
+text classification can be performed with fasttext
+word embeddings are powerful
+deep learning and machine learning are related fields
+natural language processing is a subfield of AI
