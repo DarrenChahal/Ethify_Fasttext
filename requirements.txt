@@ -5,3 +5,4 @@ Flask
 joblib
 scikit-learn
 flask-cors
+pydantic
