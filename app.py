@@ -1,11 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from fastapi import Query
 import fasttext
-
-# Define a Pydantic model for the input
-class TextRequest(BaseModel):
-    text: str
 
 app = FastAPI()
 
@@ -25,10 +21,9 @@ app.add_middleware(
 def root():
     return {"message": "FastText API is running"}
 
-@app.post("/predict/")
-def predict(request: TextRequest):  # Accept JSON body using the TextRequest model
+@app.get("/predict/")
+def predict(text: str = Query(..., description="Text to predict")):
     try:
-        text = request.text
         prediction = model.predict(text)
         return {
             "text": text,
